@@ -1,1 +1,316 @@
-{"_comment":"This file is generated. Please edit .homeycompose/app.json instead.","id":"tv.plex","version":"1.2.1","compatibility":">=5.0.0","brandColor":"#E5A00D","sdk":3,"name":{"en":"Plex"},"description":{"en":"Stream Smarter with Plex"},"platforms":["local","cloud"],"category":["video"],"permissions":[],"images":{"large":"/assets/images/large.png","small":"/assets/images/small.png"},"author":{"name":"Emile Nijssen"},"support":"mailto:emile@emilenijssen.nl","contributing":{"donate":{"paypal":{"username":"weejewel"},"githubSponsors":{"username":"weejewel"}}},"flow":{"triggers":[{"id":"recently_added","title":{"en":"New media has been added"},"hint":{"en":"When Plex has added new media to the library."},"tokens":[{"type":"string","name":"title","title":{"en":"Title"},"example":{"en":"Star Trek — The search for Spock"}}],"args":[{"type":"device","name":"device","filter":"driver_id=pms"}]},{"id":"player_start","title":{"en":"A player started streaming"},"hint":{"en":"This card is started when someone starts streaming media from your server."},"tokens":[{"type":"string","name":"playerTitle","title":{"en":"Player Name"},"example":{"en":"Emile's iPhone"}},{"type":"string","name":"mediaTitle","title":{"en":"Media"},"example":{"en":"Star Wars IV - A new hope"}},{"type":"string","name":"userTitle","title":{"en":"User"},"example":{"en":"john@doe.com"}}],"args":[{"type":"device","name":"device","filter":"driver_id=pms"}]},{"id":"player_pause","title":{"en":"A player paused streaming"},"hint":{"en":"This card is started when someone pauses streaming media from your server."},"tokens":[{"type":"string","name":"playerTitle","title":{"en":"Player Name"},"example":{"en":"Emile's iPhone"}},{"type":"string","name":"mediaTitle","title":{"en":"Media"},"example":{"en":"Star Wars IV - A new hope"}},{"type":"string","name":"userTitle","title":{"en":"User"},"example":{"en":"john@doe.com"}}],"args":[{"type":"device","name":"device","filter":"driver_id=pms"}]},{"id":"player_stop","title":{"en":"A player stopped streaming"},"hint":{"en":"This card is started when someone stopped streaming media from your server."},"tokens":[{"type":"string","name":"playerTitle","title":{"en":"Player Name"},"example":{"en":"Emile's iPhone"}},{"type":"string","name":"mediaTitle","title":{"en":"Media"},"example":{"en":"Star Wars IV - A new hope"}},{"type":"string","name":"userTitle","title":{"en":"User"},"example":{"en":"john@doe.com"}}],"args":[{"type":"device","name":"device","filter":"driver_id=pms"}]}],"actions":[{"id":"rescan","title":{"en":"Scan Library Files"},"titleFormatted":{"en":"Scan [[library]]"},"hint":{"en":"Rescan the library for new files"},"args":[{"type":"device","name":"device","filter":"driver_id=pms"},{"type":"autocomplete","name":"library","title":{"en":"Library"}}]},{"id":"refresh","title":{"en":"Refresh Library Metadata"},"titleFormatted":{"en":"Refresh [[library]]"},"hint":{"en":"Refresh the library metadata"},"args":[{"type":"device","name":"device","filter":"driver_id=pms"},{"type":"autocomplete","name":"library","title":{"en":"Library"}}]}]},"drivers":[{"id":"pms","name":{"en":"Plex Media Server"},"class":"other","capabilities":["speaker_track","speaker_album","speaker_artist"],"platforms":["local","cloud"],"connectivity":["cloud"],"images":{"large":"/drivers/pms/assets/images/large.png","small":"/drivers/pms/assets/images/small.png"},"pair":[{"id":"auth"},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"auth"}]}]}
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "tv.plex",
+  "version": "1.2.1",
+  "compatibility": ">=5.0.0",
+  "brandColor": "#E5A00D",
+  "sdk": 3,
+  "name": {
+    "en": "Plex"
+  },
+  "description": {
+    "en": "Stream Smarter with Plex"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "category": [
+    "video"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Emile Nijssen"
+  },
+  "support": "mailto:emile@emilenijssen.nl",
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "weejewel"
+      },
+      "githubSponsors": {
+        "username": "weejewel"
+      }
+    }
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "recently_added",
+        "title": {
+          "en": "New media has been added"
+        },
+        "hint": {
+          "en": "When Plex has added new media to the library."
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "title",
+            "title": {
+              "en": "Title"
+            },
+            "example": {
+              "en": "Star Trek — The search for Spock"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pms"
+          }
+        ]
+      },
+      {
+        "id": "player_start",
+        "title": {
+          "en": "A player started streaming"
+        },
+        "hint": {
+          "en": "This card is started when someone starts streaming media from your server."
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "playerTitle",
+            "title": {
+              "en": "Player Name"
+            },
+            "example": {
+              "en": "Emile's iPhone"
+            }
+          },
+          {
+            "type": "string",
+            "name": "mediaTitle",
+            "title": {
+              "en": "Media"
+            },
+            "example": {
+              "en": "Star Wars IV - A new hope"
+            }
+          },
+          {
+            "type": "string",
+            "name": "userTitle",
+            "title": {
+              "en": "User"
+            },
+            "example": {
+              "en": "john@doe.com"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pms"
+          }
+        ]
+      },
+      {
+        "id": "player_pause",
+        "title": {
+          "en": "A player paused streaming"
+        },
+        "hint": {
+          "en": "This card is started when someone pauses streaming media from your server."
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "playerTitle",
+            "title": {
+              "en": "Player Name"
+            },
+            "example": {
+              "en": "Emile's iPhone"
+            }
+          },
+          {
+            "type": "string",
+            "name": "mediaTitle",
+            "title": {
+              "en": "Media"
+            },
+            "example": {
+              "en": "Star Wars IV - A new hope"
+            }
+          },
+          {
+            "type": "string",
+            "name": "userTitle",
+            "title": {
+              "en": "User"
+            },
+            "example": {
+              "en": "john@doe.com"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pms"
+          }
+        ]
+      },
+      {
+        "id": "player_stop",
+        "title": {
+          "en": "A player stopped streaming"
+        },
+        "hint": {
+          "en": "This card is started when someone stopped streaming media from your server."
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "playerTitle",
+            "title": {
+              "en": "Player Name"
+            },
+            "example": {
+              "en": "Emile's iPhone"
+            }
+          },
+          {
+            "type": "string",
+            "name": "mediaTitle",
+            "title": {
+              "en": "Media"
+            },
+            "example": {
+              "en": "Star Wars IV - A new hope"
+            }
+          },
+          {
+            "type": "string",
+            "name": "userTitle",
+            "title": {
+              "en": "User"
+            },
+            "example": {
+              "en": "john@doe.com"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pms"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "rescan",
+        "title": {
+          "en": "Scan Library Files"
+        },
+        "titleFormatted": {
+          "en": "Scan [[library]]"
+        },
+        "hint": {
+          "en": "Rescan the library for new files"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pms"
+          },
+          {
+            "type": "autocomplete",
+            "name": "library",
+            "title": {
+              "en": "Library"
+            }
+          }
+        ]
+      },
+      {
+        "id": "refresh",
+        "title": {
+          "en": "Refresh Library Metadata"
+        },
+        "titleFormatted": {
+          "en": "Refresh [[library]]"
+        },
+        "hint": {
+          "en": "Refresh the library metadata"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pms"
+          },
+          {
+            "type": "autocomplete",
+            "name": "library",
+            "title": {
+              "en": "Library"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "id": "pms",
+      "name": {
+        "en": "Plex Media Server"
+      },
+      "class": "other",
+      "capabilities": [
+        "speaker_track",
+        "speaker_album",
+        "speaker_artist"
+      ],
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "large": "/drivers/pms/assets/images/large.png",
+        "small": "/drivers/pms/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "auth"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "auth"
+        }
+      ]
+    }
+  ]
+}
